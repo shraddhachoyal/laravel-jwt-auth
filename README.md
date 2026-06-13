@@ -6,7 +6,7 @@ composer create-project laravel/laravel laravel-jwt-auth
 cd laravel-jwt-auth
 
 <h3>Step 2: Install JWT Package</h3>
-<b></Install JWT api package: b>
+<b></Install JWT api package: <b>
 php artisan install:api
 
 <b>Install JWT Auth:</b>
@@ -14,7 +14,8 @@ composer require tymon/jwt-auth
 
 <b>Publish the package configuration:</b>
 
-php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+php artisan vendor:
+publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 
 <b>Generate the JWT secret key:</b>
 
@@ -40,13 +41,14 @@ Update guards in config/auth.php:
 Open app/Models/User.php Modify:
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
-{
+class User extends Authenticatable implements JWTSubject<br/>
+{<br/>
     public function getJWTIdentifier()
-    {
-        return $this->getKey();
+    {<br/>
+        return $this->getKey();<br/>
     }
 
     public function getJWTCustomClaims()
